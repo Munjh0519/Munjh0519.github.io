@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>갓튀김</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>갓튀김</h1>
+    <p>GODFRIES</p>
+  </header>
+
+  <div class="store-banner">
+    <img src="imeges/GODfries.jpeg" alt="가게 전경 사진">
+  </div>
+  
+  <section class="store-intro">
+    <h2>가게 소개</h2><hr>
+    <p>종류: 분식집</p>
+    <p>주소: 부산광역시 수영구 광안동 1330 부산 광안동 쌍용 예가 디 오션, 상가119호</p>
+    <p>영업일: 평일: 오전 12시 ~ 오후 11시</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 주말: 오전 11시 ~ 오후 11시</p>
+    <p>1. Q: 튀김을 진열 해놓으면 다 식지 않나요?</p>
+    <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A: 주문을 받으면 튀김을 다시 튀겨주는 형식이라 따끈하게 드실 수 있습니다.</P>
+    <p>2. Q: 안에서 먹기엔 좁은데 밖에 먹을 곳이 있을까요?</p>
+    <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A: 여러명이서 다 같이 먹을 생각이면 포장해서 좀만 걸으면 나오는 바닷가에서 드시는걸 추천합니다.</P>
+    <p>3. Q: 작성자가 보고싶어요!</p>
+    <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A: 주말에는 가기전에 연락하면 작성자가 나오고, 방학기간은 제가 일을 돕습니다.</P>
+    <p></p>
+    <p>자세한 가게 문의: 인스타 munjh519</p>
+  </section>  
+  
+  <section class="menu">
+    <h2>메뉴판</h2>
+    <div class="menu-list">
+      <!-- 메뉴 아이템 동일 -->
+      <div class="menu-item" data-name="떡볶이"><img src="imeges/tteokbokki.jpeg"><p>떡볶이</p></div>
+      <div class="menu-item" data-name="오뎅"><img src="imeges/odeng.jpeg"><p>오뎅</p></div>
+      <div class="menu-item" data-name="물떡"><img src="imeges/multteok.jpeg"><p>물떡</p></div>
+      <div class="menu-item" data-name="김말이튀김"><img src="imeges/kimroll.jpeg"><p>김말이튀김</p></div>
+      <div class="menu-item" data-name="만두튀김"><img src="imeges/mando.jpeg"><p>만두튀김</p></div>
+      <div class="menu-item" data-name="오징어튀김"><img src="imeges/squid.jpeg"><p>오징어튀김</p></div>
+      <div class="menu-item" data-name="고추튀김"><img src="imeges/pepper.jpeg"><p>고추튀김</p></div>
+      <div class="menu-item" data-name="고구마 튀김"><img src="imeges/sweetpotato.jpeg"><p>고구마 튀김</p></div>
+      <div class="menu-item" data-name="쥐포튀김"><img src="imeges/ratfish.jpeg"><p>쥐포튀김</p></div>
+      <div class="menu-item" data-name="새우튀김"><img src="imeges/shrimp.jpeg"><p>새우튀김</p></div>
+      <div class="menu-item" data-name="슬러쉬"><img src="imeges/slrush.jpeg"><p>슬러쉬</p></div>
+      <div class="menu-item" data-name="콜팝"><img src="imeges/colpop.jpeg"><p>콜팝</p></div>
+      <div class="menu-item" data-name="회오리 감자"><img src="imeges/tornadopotato.jpeg"><p>회오리 감자</p></div>
+      <div class="menu-item" data-name="핫도그"><img src="imeges/hotdog.jpeg"><p>핫도그</p></div>
+      <div class="menu-item" data-name="핫바"><img src="imeges/hotbar.jpeg"><p>핫바</p></div>
+    </div>
+  </section>
+
+  <section class="reviews">
+    <h2>가게 리뷰 남기기</h2>
+    <form id="storeReviewForm">
+      <input type="text" id="storeReviewId" placeholder="아이디" required autocomplete="off" />
+      <input type="password" id="storeReviewPw" placeholder="비밀번호" required autocomplete="off" />
+      <input type="text" id="storeReviewText" placeholder="리뷰 내용" required autocomplete="off" />
+      <div class="star-rating" data-name="storeRating">
+        <span data-value="1" class="star">&#9733;</span>
+        <span data-value="2" class="star">&#9733;</span>
+        <span data-value="3" class="star">&#9733;</span>
+        <span data-value="4" class="star">&#9733;</span>
+        <span data-value="5" class="star">&#9733;</span>
+        <input type="hidden" name="storeRating" id="storeRatingInput" required />
+      </div>
+      <button type="submit">등록</button>
+    </form>
+    <ul id="storeReviewList"></ul>
+  </section>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal">&larr; 뒤로가기</span>
+      <div id="modalDetail"></div>
+      <form id="menuReviewForm">
+        <input type="text" id="menuReviewId" placeholder="아이디" required autocomplete="off" />
+        <input type="password" id="menuReviewPw" placeholder="비밀번호" required autocomplete="off" />
+        <input type="text" id="menuReviewText" placeholder="리뷰를 입력하세요" required autocomplete="off" />
+        <div class="star-rating" data-name="menuRating">
+          <span data-value="1" class="star">&#9733;</span>
+          <span data-value="2" class="star">&#9733;</span>
+          <span data-value="3" class="star">&#9733;</span>
+          <span data-value="4" class="star">&#9733;</span>
+          <span data-value="5" class="star">&#9733;</span>
+          <input type="hidden" name="menuRating" id="menuRatingInput" required />
+        </div>
+        <button type="submit">등록</button>
+      </form>
+      <ul id="menuReviewList"></ul>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 갓튀김</p>
+    <p></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
